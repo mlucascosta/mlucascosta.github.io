@@ -8,6 +8,10 @@
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Alpine.js para reatividade simples -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -37,7 +41,7 @@
     rel="stylesheet"
   />
 
-  <!-- Boxicons (melhor que Font Awesome para ícones de marca) -->
+  <!-- Boxicons (ícones de marca) -->
   <link
     href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     rel="stylesheet"
@@ -54,31 +58,17 @@
   </style>
 </head>
 
-<body class="font-sans text-contrast">
+<body class="font-sans text-contrast" x-data="experience()">
   <!-- Header com ícones sociais -->
   <header class="w-full py-4 bg-base shadow-subtle">
     <div class="max-w-4xl mx-auto flex justify-end space-x-6 text-primary text-xl px-4">
-      <a
-        href="https://www.linkedin.com/in/mlucascosta/"
-        target="_blank"
-        class="hover:text-primary/80"
-        aria-label="LinkedIn"
-      >
+      <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" class="hover:text-primary/80" aria-label="LinkedIn">
         <i class='bx bxl-linkedin'></i>
       </a>
-      <a
-        href="https://github.com/mlucascosta"
-        target="_blank"
-        class="hover:text-primary/80"
-        aria-label="GitHub"
-      >
+      <a href="https://github.com/mlucascosta" target="_blank" class="hover:text-primary/80" aria-label="GitHub">
         <i class='bx bxl-github'></i>
       </a>
-      <a
-        href="#"
-        class="hover:text-primary/80"
-        aria-label="Discord"
-      >
+      <a href="#" class="hover:text-primary/80" aria-label="Discord">
         <i class='bx bxl-discord-alt'></i>
       </a>
     </div>
@@ -87,19 +77,15 @@
   <div class="w-full min-h-screen flex flex-col items-center">
     <!-- Hero -->
     <section class="w-full py-24 text-center px-4">
-      <h1 class="text-5xl font-display font-semibold text-primary mb-3">
-        Mário Lucas Costa
-      </h1>
-      <p class="text-lg text-graylight">
-        Desenvolvedor Backend Sênior
-      </p>
+      <h1 class="text-5xl font-display font-semibold text-primary mb-3">Mário Lucas Costa</h1>
+      <p class="text-lg text-graylight">Desenvolvedor Backend Sênior</p>
     </section>
 
     <!-- Sobre -->
     <section class="max-w-3xl w-full px-6 py-12 text-center">
       <h2 class="text-2xl font-semibold mb-4">Sobre mim</h2>
       <p class="text-gray-700">
-        Desenvolvedor backend com mais de 8 anos de experiência. Especialista em
+        Desenvolvedor backend com mais de <strong><span x-text="years"></span></strong> anos de experiência. Especialista em
         <a href="https://laravel.com" target="_blank" class="text-primary underline">Laravel</a>,
         <a href="https://symfony.com" target="_blank" class="text-primary underline">Symfony</a>,
         <a href="https://nodejs.org" target="_blank" class="text-primary underline">Node.js</a> e
@@ -113,184 +99,235 @@
       </p>
     </section>
 
-   <!-- Tecnologias & Ferramentas (minimalista e elegante) -->
-<section id="stack" class="w-full py-12 bg-base">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-2xl font-semibold mb-8 text-center">Stack</h2>
-
-    <!-- Linguagens & Bancos de Dados -->
-    <div class="mb-10">
-      <h3 class="text-xl font-medium mb-4">Linguagens & Bancos de Dados</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-php text-primary text-2xl'></i>
-          <span class="text-gray-700">PHP</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-nodejs text-primary text-2xl'></i>
-          <span class="text-gray-700">JavaScript</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-typescript text-primary text-2xl'></i>
-          <span class="text-gray-700">TypeScript</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-mysql text-primary text-2xl'></i>
-          <span class="text-gray-700">MySQL</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-postgresql text-primary text-2xl'></i>
-          <span class="text-gray-700">PostgreSQL</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxs-server text-primary text-2xl'></i>
-          <span class="text-gray-700">Oracle</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxs-server text-primary text-2xl'></i>
-          <span class="text-gray-700">MariaDB</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Frameworks & Bibliotecas -->
-    <div class="mb-10">
-      <h3 class="text-xl font-medium mb-4">Frameworks & Bibliotecas</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-laravel text-primary text-2xl'></i>
-          <span class="text-gray-700">Laravel</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-symfony text-primary text-2xl'></i>
-          <span class="text-gray-700">Symfony</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-vuejs text-primary text-2xl'></i>
-          <span class="text-gray-700">Vue.js</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-react text-primary text-2xl'></i>
-          <span class="text-gray-700">React.js</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ferramentas & Infraestrutura -->
-    <div>
-      <h3 class="text-xl font-medium mb-4">Ferramentas & Infraestrutura</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-docker text-primary text-2xl'></i>
-          <span class="text-gray-700">Docker</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-npm text-primary text-2xl'></i>
-          <span class="text-gray-700">npm</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-kubernetes text-primary text-2xl'></i>
-          <span class="text-gray-700">Kubernetes</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxs-plug text-primary text-2xl'></i>
-          <span class="text-gray-700">Sockets</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxs-plug text-primary text-2xl'></i>
-          <span class="text-gray-700">WebSockets</span>
-        </div>
-        <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-          <i class='bx bxl-rabbitmq text-primary text-2xl'></i>
-          <span class="text-gray-700">RabbitMQ</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Arquitetura & Boas Práticas -->
-<section id="arquitetura" class="w-full py-12">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-2xl font-semibold mb-6">Arquitetura & Boas Práticas</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-        <i class='bx bx-cog text-primary text-2xl mb-2'></i>
-        <span class="block text-gray-700 font-medium">DDD</span>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-        <i class='bx bx-test-tube text-primary text-2xl mb-2'></i>
-        <span class="block text-gray-700 font-medium">TDD</span>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-        <i class='bx bx-code-alt text-primary text-2xl mb-2'></i>
-        <span class="block text-gray-700 font-medium">Clean Code</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Experiência Profissional -->
-    <section class="w-full bg-white shadow-subtle py-12">
+    <!-- Tecnologias & Ferramentas -->
+    <section id="stack" class="w-full py-12 bg-base">
       <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-2xl font-semibold text-center mb-6">Experiência Profissional</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Catena IT / Prodata Mobility -->
-          <div class="bg-base p-4 rounded shadow">
-            <h3 class="font-bold text-lg">
-              Catena IT / 
-              <a href="https://www.prodatamobility.com.br/" target="_blank" class="text-primary underline">Prodata Mobility</a>
-            </h3>
-            <p class="text-sm text-gray-500">jun/2024 – atual</p>
-            <p class="text-gray-700">
-              Desenvolvimento de sistemas backend em <strong>Node.js</strong>, integrando padrões EMV, arquitetura com <strong>Docker</strong>, <strong>RabbitMQ</strong> e comunicação com sistemas de transação financeira.
-            </p>
+        <h2 class="text-2xl font-semibold mb-8 text-center">Stack</h2>
+
+        <!-- Linguagens & Bancos de Dados -->
+        <div class="mb-10">
+          <h3 class="text-xl font-medium mb-4">Linguagens & Bancos de Dados</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-php text-primary text-2xl'></i>
+              <span class="text-gray-700">PHP</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-nodejs text-primary text-2xl'></i>
+              <span class="text-gray-700">JavaScript</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-typescript text-primary text-2xl'></i>
+              <span class="text-gray-700">TypeScript</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-mysql text-primary text-2xl'></i>
+              <span class="text-gray-700">MySQL</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-postgresql text-primary text-2xl'></i>
+              <span class="text-gray-700">PostgreSQL</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxs-server text-primary text-2xl'></i>
+              <span class="text-gray-700">Oracle</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxs-server text-primary text-2xl'></i>
+              <span class="text-gray-700">MariaDB</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-redis text-primary text-2xl'></i>
+              <span class="text-gray-700">Redis</span>
+            </div>
           </div>
-          <!-- Stefanini / Movvi & Governo de MG -->
-          <div class="bg-base p-4 rounded shadow">
-            <h3 class="font-bold text-lg">
-              Stefanini / 
-              <a href="https://movvi.com.br/" target="_blank" class="text-primary underline">Movvi</a> & Governo de MG
-            </h3>
-            <p class="text-sm text-gray-500">out/2021 – mai/2024</p>
-            <p class="text-gray-700">
-              Atuação em sistemas logísticos e serviços públicos usando <strong>Symfony</strong>, <strong>Electron</strong>, <strong>Vue.js</strong>. Entregas para plataformas estaduais, integração com APIs públicas e sistemas legados.
-            </p>
+        </div>
+
+        <!-- Frameworks & Bibliotecas -->
+        <div class="mb-10">
+          <h3 class="text-xl font-medium mb-4">Frameworks & Bibliotecas</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-laravel text-primary text-2xl'></i>
+              <span class="text-gray-700">Laravel</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-symfony text-primary text-2xl'></i>
+              <span class="text-gray-700">Symfony</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-vuejs text-primary text-2xl'></i>
+              <span class="text-gray-700">Vue.js</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-react text-primary text-2xl'></i>
+              <span class="text-gray-700">React.js</span>
+            </div>
           </div>
-          <!-- UpLexis Tecnologia -->
-          <div class="bg-base p-4 rounded shadow">
-            <h3 class="font-bold text-lg">
-              <a href="https://www.uplexis.com.br" target="_blank" class="text-primary underline">UpLexis Tecnologia</a>
-            </h3>
-            <p class="text-sm text-gray-500">ago/2018 – out/2021</p>
-            <p class="text-gray-700">
-              Criação de <strong>web crawlers</strong> e scripts de <strong>scraping</strong> para coleta de dados estratégicos. Manutenção de APIs, tratamento de dados e desenvolvimento de serviços distribuídos em <strong>PHP</strong> e <strong>Node.js</strong>.
-            </p>
-          </div>
-          <!-- GrupoMax -->
-          <div class="bg-base p-4 rounded shadow">
-            <h3 class="font-bold text-lg">
-              <a href="https://grupomax.com.br" target="_blank" class="text-primary underline">GrupoMax</a>
-            </h3>
-            <p class="text-sm text-gray-500">ago/2014 – fev/2017</p>
-            <p class="text-gray-700">
-              Desenvolvimento de <strong>ERP próprio</strong> para microempresas e criação de <strong>sites institucionais</strong>. Utilização de <strong>Laravel</strong>, <strong>CodeIgniter</strong>, <strong>Ionic</strong> e banco de dados relacionais em ambiente Linux.
-            </p>
+        </div>
+
+        <!-- Ferramentas & Infraestrutura -->
+        <div>
+          <h3 class="text-xl font-medium mb-4">Ferramentas & Infraestrutura</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-docker text-primary text-2xl'></i>
+              <span class="text-gray-700">Docker</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-npm text-primary text-2xl'></i>
+              <span class="text-gray-700">npm</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-kubernetes text-primary text-2xl'></i>
+              <span class="text-gray-700">Kubernetes</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxs-plug text-primary text-2xl'></i>
+              <span class="text-gray-700">Sockets</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxs-plug text-primary text-2xl'></i>
+              <span class="text-gray-700">WebSockets</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-rabbitmq text-primary text-2xl'></i>
+              <span class="text-gray-700">RabbitMQ</span>
+            </div>
+            
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer apenas com os meus sites -->
-    <footer class="text-center py-6 text-gray-400 text-sm">
-      <p>
-        © 2025 Mário Lucas Costa — 
-        <a href="https://oreduto.com.br" class="underline hover:text-primary" target="_blank">oreduto.com.br</a> • 
-        <a href="https://mlucascosta.com.br" class="underline hover:text-primary" target="_blank">mlucascosta.com.br</a>
-      </p>
+    <!-- Arquitetura & Boas Práticas -->
+    <section id="arquitetura" class="w-full py-12">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-semibold mb-6">Arquitetura & Boas Práticas</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+            <i class='bx bx-cog text-primary text-2xl mb-2'></i>
+            <span class="block text-gray-700 font-medium">DDD</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+            <i class='bx bx-test-tube text-primary text-2xl mb-2'></i>
+            <span class="block text-gray-700 font-medium">TDD</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+            <i class='bx bx-code-alt text-primary text-2xl mb-2'></i>
+            <span class="block text-gray-700 font-medium">Clean Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência Profissional (timeline refinado) -->
+    <section id="experiencia" class="w-full bg-base py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold text-center mb-10">Experiência Profissional</h2>
+        <div class="relative">
+          <div class="absolute top-0 left-10 w-px h-full bg-soft"></div>
+          <div class="space-y-12">
+            <!-- Prodata Mobility -->
+            <div class="relative">
+              <div class="absolute -left-12 top-1 w-4 h-4 bg-primary rounded-full ring-2 ring-base"></div>
+              <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+                <div class="flex items-center space-x-3">
+                  <i class="bx bxs-briefcase text-primary text-2xl"></i>
+                  <h3 class="text-lg font-bold">
+                    Catena IT / <a href="https://www.prodatamobility.com.br/" target="_blank" class="underline text-primary">Prodata Mobility</a>
+                  </h3>
+                </div>
+                <time class="block text-sm text-gray-500 mt-2">jun/2024 – atual</time>
+                <p class="text-gray-700 mt-4">
+                  Desenvolvimento de sistemas backend em <strong>Node.js</strong>, integrando padrões EMV, trabalhando com <strong>Docker</strong>, <strong>RabbitMQ</strong> e integrações financeiras.
+                </p>
+              </div>
+            </div>
+            <!-- Stefanini / Movvi & Governo de MG -->
+            <div class="relative">
+              <div class="absolute -left-12 top-1 w-4 h-4 bg-primary rounded-full ring-2 ring-base"></div>
+              <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+                <div class="flex items-center space-x-3">
+                  <i class="bx bxs-briefcase text-primary text-2xl"></i>
+                  <h3 class="text-lg font-bold">
+                    Stefanini / <a href="https://movvi.com.br/" target="_blank" class="underline text-primary">Movvi</a> & Governo de MG
+                  </h3>
+                </div>
+                <time class="block text-sm text-gray-500 mt-2">out/2021 – mai/2024</time>
+                <p class="text-gray-700 mt-4">
+                  Projetos de sistemas logísticos e serviços públicos com <strong>Symfony</strong>, <strong>RabbitMQ</strong>, <strong>Electron</strong> e <strong>Vue.js</strong>, além de integrações com APIs públicas e legados.
+                </p>
+              </div>
+            </div>
+            <!-- UpLexis Tecnologia -->
+            <div class="relative">
+              <div class="absolute -left-12 top-1 w-4 h-4 bg-primary rounded-full ring-2 ring-base"></div>
+              <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+                <div class="flex items-center space-x-3">
+                  <i class="bx bxs-briefcase text-primary text-2xl"></i>
+                  <h3 class="text-lg font-bold">
+                    <a href="https://www.uplexis.com.br" target="_blank" class="underline text-primary">UpLexis Tecnologia</a>
+                  </h3>
+                </div>
+                <time class="block text-sm text-gray-500 mt-2">ago/2018 – out/2021</time>
+                <p class="text-gray-700 mt-4">
+                  Desenvolvimento de <strong>web crawlers</strong> e <strong>scraping</strong>, manutenção de APIs e arquiteturas distribuídas em <strong>PHP</strong> e <strong>Node.js</strong>.
+                </p>
+              </div>
+            </div>
+            <!-- GrupoMax -->
+            <div class="relative">
+              <div class="absolute -left-12 top-1 w-4 h-4 bg-primary rounded-full ring-2 ring-base"></div>
+              <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+                <div class="flex items-center space-x-3">
+                  <i class="bx bxs-briefcase text-primary text-2xl"></i>
+                  <h3 class="text-lg font-bold">
+                    <a href="https://grupomax.com.br" target="_blank" class="underline text-primary">GrupoMax</a>
+                  </h3>
+                </div>
+                <time class="block text-sm text-gray-500 mt-2">ago/2014 – fev/2017</time>
+                <p class="text-gray-700 mt-4">
+                  Criação de <strong>ERP</strong> e sites institucionais com <strong>Laravel</strong>, <strong>CodeIgniter</strong> e <strong>Ionic</strong> em ambiente Linux.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer personalizado -->
+    <footer class="w-full bg-base shadow-subtle py-8 mt-12">
+      <div class="flex justify-center space-x-6 text-primary text-2xl">
+        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" aria-label="LinkedIn" class="hover:text-primary/80">
+          <i class='bx bxl-linkedin'></i>
+        </a>
+        <a href="https://github.com/mlucascosta" target="_blank" aria-label="GitHub" class="hover:text-primary/80">
+          <i class='bx bxl-github'></i>
+        </a>
+        <a href="#" target="_blank" aria-label="Discord" class="hover:text-primary/80">
+          <i class='bx bxl-discord-alt'></i>
+        </a>
+      </div>
+      <div class="mt-4 text-center text-gray-400 text-sm">
+        © <span x-text="currentYear"></span> Mário Lucas Costa — 
+        <a href="https://oreduto.com.br" target="_blank" class="underline hover:text-primary">oreduto.com.br</a> • 
+        <a href="https://mlucascosta.com.br" target="_blank" class="underline hover:text-primary">mlucascosta.com.br</a>
+      </div>
     </footer>
   </div>
+
+  <!-- Script Alpine.js para dados reativos -->
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('experience', () => ({
+        startYear: 2014,
+        get currentYear() { return new Date().getFullYear(); },
+        get years() { return this.currentYear - this.startYear; }
+      }));
+    });
+  </script>
 </body>
 
 </html>
