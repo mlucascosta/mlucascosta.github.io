@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mário Lucas Costa - Desenvolvedor Backend</title>
+  <title>Mário Lucas Costa — Desenvolvedor Backend</title>
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,154 +13,131 @@
       darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            vapor: {
-              pink: '#FF6EC7',
-              blue: '#6ECFFF',
-              purple: '#A18CD1',
-              dark: '#0f0c29',
-              gray: '#9A8C98'
-            },
-            light: {
-              base: '#FFFFFF',
-              surface: '#F3F4F6',
-              border: '#E5E7EB',
-              muted: '#D1D5DB',
-              accent: '#0078D4'
-            }
-          },
           fontFamily: {
-            sans: ['Poppins', 'Inter', 'Segoe UI', 'sans-serif']
+            sans: ['"DM Sans"', 'sans-serif'],
+            display: ['"Orbitron"', 'sans-serif']
+          },
+          colors: {
+            base: '#F5F5F7',
+            primary: '#2563eb',
+            contrast: '#111827',
+            soft: '#E5E7EB',
+            graylight: '#9CA3AF'
           },
           boxShadow: {
-            vapor: '0 4px 20px rgba(255, 110, 199, 0.4)'
+            subtle: '0 4px 20px rgba(0, 0, 0, 0.05)',
           }
         }
       }
-    }
+    };
   </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  <!-- Estilo personalizado -->
   <style>
     html {
       scroll-behavior: smooth;
+      background-color: #F5F5F7;
     }
-
-    body {
-      background-image: url('f30d6e97-fa25-43f5-959e-c3e8e766f15d.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-
-    .glass {
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 1rem;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+    .email-protect::before {
+      content: attr(data-user) "[em]" attr(data-domain);
     }
   </style>
 </head>
 
-<body x-data="themeSwitcher()" x-init="init()" :class="theme" class="font-sans text-white min-h-screen">
-  <div class="max-w-5xl mx-auto px-6 py-10 glass animate__animated animate__fadeIn">
-
-    <!-- Toggle Theme Button -->
-    <div class="flex justify-between items-center mb-6">
-      <div>
-        <a href="https://oreduto.com.br" class="text-sm text-vapor-blue hover:underline mr-4">🔗 oReduto.com.br</a>
-        <a href="https://mlucascosta.com.br" class="text-sm text-vapor-pink hover:underline">🌐 mlucascosta.com.br</a>
+<body x-data="themeSwitcher()" x-init="init()" :class="theme" class="font-sans text-contrast">
+  <div class="w-full min-h-screen flex flex-col items-center">
+    <!-- Hero -->
+    <section class="w-full py-24 text-center px-4">
+      <h1 class="text-5xl font-display font-semibold text-primary mb-3">Mário Lucas Costa</h1>
+      <p class="text-lg text-graylight">Desenvolvedor Backend Sênior — PHP, Node.js, Typescript, Docker, EMV</p>
+      <div class="mt-6 flex justify-center space-x-6 text-primary text-xl">
+        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" class="hover:underline"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/mlucascosta" target="_blank" class="hover:underline"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:underline"><i class="fab fa-discord"></i></a>
+        <a href="https://oreduto.com.br" target="_blank" class="hover:underline text-sm">oreduto.com.br</a>
+        <a href="https://mlucascosta.com.br" target="_blank" class="hover:underline text-sm">mlucascosta.com.br</a>
       </div>
-      <button @click="toggleTheme" class="text-2xl text-vapor-pink hover:scale-105 transition">
-        <i :class="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
-      </button>
-    </div>
+    </section>
 
-    <!-- Header -->
-    <header class="text-center mb-16">
-      <h1 class="text-5xl font-bold text-vapor-pink mb-2 drop-shadow">Mário Lucas Costa</h1>
-      <p class="text-xl text-vapor-blue">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
-      <div class="mt-4 space-x-6">
-        <a href="mailto:mlucascosta@outlook.com" class="text-vapor-purple hover:underline"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" class="text-vapor-purple hover:underline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/mlucascosta" target="_blank" class="text-vapor-purple hover:underline"><i class="fab fa-github"></i> GitHub</a>
+    <!-- Sobre -->
+    <section class="max-w-3xl w-full px-6 py-12 text-center">
+      <h2 class="text-2xl font-semibold mb-4">Sobre mim</h2>
+      <p class="text-gray-700">
+        Desenvolvedor backend com mais de 8 anos de experiência. Especialista em <a href="https://laravel.com" target="_blank" class="text-primary underline">Laravel</a>, <a href="https://symfony.com" target="_blank" class="text-primary underline">Symfony</a>, <a href="https://nodejs.org" target="_blank" class="text-primary underline">Node.js</a> e <a href="https://www.docker.com/" target="_blank" class="text-primary underline">Docker</a>. Já atuei em projetos de grande impacto com empresas como <a href="https://www.prodatamobility.com.br/" target="_blank" class="text-primary underline">Prodata Mobility</a>, <a href="https://movvi.com.br/" target="_blank" class="text-primary underline">Movvi</a>, <a href="https://www.uplexis.com.br" target="_blank" class="text-primary underline">UpLexis</a>, <a href="https://www.stefanini.com/pt-br" target="_blank" class="text-primary underline">Stefanini</a> e <a href="https://grupomax.com.br" target="_blank" class="text-primary underline">GrupoMax</a>, além de iniciativas com o Governo do Estado de MG.
+      </p>
+    </section>
+
+    <!-- Tecnologias -->
+    <section class="w-full py-12 bg-base">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-semibold mb-6">Tecnologias e Ferramentas</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
+          <a href="https://www.php.net" target="_blank" class="hover:text-primary">PHP</a>
+          <a href="https://laravel.com" target="_blank" class="hover:text-primary">Laravel</a>
+          <a href="https://symfony.com" target="_blank" class="hover:text-primary">Symfony</a>
+          <a href="https://nodejs.org" target="_blank" class="hover:text-primary">Node.js</a>
+          <a href="https://www.typescriptlang.org" target="_blank" class="hover:text-primary">TypeScript</a>
+          <a href="https://vuejs.org" target="_blank" class="hover:text-primary">Vue.js</a>
+          <a href="https://react.dev" target="_blank" class="hover:text-primary">React.js</a>
+          <a href="https://www.postgresql.org" target="_blank" class="hover:text-primary">PostgreSQL</a>
+          <a href="https://www.mysql.com" target="_blank" class="hover:text-primary">MySQL</a>
+          <a href="https://www.mongodb.com" target="_blank" class="hover:text-primary">MongoDB</a>
+          <a href="https://www.docker.com" target="_blank" class="hover:text-primary">Docker</a>
+          <a href="https://www.rabbitmq.com" target="_blank" class="hover:text-primary">RabbitMQ</a>
+          <a href="https://git-scm.com" target="_blank" class="hover:text-primary">Git</a>
+          <a href="https://www.electronjs.org" target="_blank" class="hover:text-primary">Electron.js</a>
+          <a href="https://ionicframework.com" target="_blank" class="hover:text-primary">Ionic</a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- Conteúdo principal -->
-    <main class="space-y-14">
-      <section>
-        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Resumo Profissional</h2>
-        <p class="mt-4 text-light-muted">
-          Sou um desenvolvedor backend com mais de 8 anos de experiência prática em aplicações escaláveis, APIs, sistemas EMV e automação de dados via crawlers. Atuei em projetos críticos para empresas como Prodata Mobility, Movvi e o Governo de MG.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Experiência Profissional</h2>
-        <div class="mt-4 space-y-6">
-          <div>
-            <h3 class="font-semibold text-lg">Catena IT (Prodata Mobility)</h3>
-            <p class="text-sm text-vapor-gray">jun/2024 – atual</p>
-            <p>Node.js | Docker | Sistemas EMV | APIs REST</p>
+    <!-- Experiência Profissional -->
+    <section class="w-full bg-white shadow-subtle py-12">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold text-center mb-6">Experiência Profissional</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-base p-4 rounded shadow">
+            <h3 class="font-bold text-lg">Catena IT / <a href="https://www.prodatamobility.com.br/" class="text-primary underline" target="_blank">Prodata Mobility</a></h3>
+            <p class="text-sm text-gray-500">jun/2024 – atual</p>
+            <p class="text-gray-700">Desenvolvimento de sistemas backend em <strong>Node.js</strong>, integrando padrões EMV, arquitetura com <strong>Docker</strong>, <strong>RabbitMQ</strong> e comunicação com sistemas de transação financeira.</p>
           </div>
-          <div>
-            <h3 class="font-semibold text-lg">Stefanini (Movvi & Governo MG)</h3>
-            <p class="text-sm text-vapor-gray">out/2021 – mai/2024</p>
-            <p>Symfony | Electron.js | Vue.js | Projetos escaláveis e públicos</p>
+          <div class="bg-base p-4 rounded shadow">
+            <h3 class="font-bold text-lg">Stefanini / <a href="https://movvi.com.br/" class="text-primary underline" target="_blank">Movvi</a> & Governo de MG</h3>
+            <p class="text-sm text-gray-500">out/2021 – mai/2024</p>
+            <p class="text-gray-700">Atuação em sistemas logísticos e serviços públicos usando <strong>Symfony</strong>, <strong>Electron</strong>, <strong>Vue.js</strong>. Entregas para plataformas estaduais, integração com APIs públicas e sistemas legados.</p>
           </div>
-          <div>
-            <h3 class="font-semibold text-lg">UpLexis Tecnologia</h3>
-            <p class="text-sm text-vapor-gray">ago/2018 – out/2021</p>
-            <p>PHP | Crawlers | APIs externas | Backend escalável</p>
+          <div class="bg-base p-4 rounded shadow">
+            <h3 class="font-bold text-lg"><a href="https://www.uplexis.com.br" class="text-primary underline" target="_blank">UpLexis Tecnologia</a></h3>
+            <p class="text-sm text-gray-500">ago/2018 – out/2021</p>
+            <p class="text-gray-700">Criação de <strong>web crawlers</strong> e scripts de <strong>scraping</strong> para coleta de dados estratégicos. Manutenção de APIs, tratamento de dados e desenvolvimento de serviços distribuídos em <strong>PHP</strong> e <strong>Node.js</strong>.</p>
+          </div>
+          <div class="bg-base p-4 rounded shadow">
+            <h3 class="font-bold text-lg"><a href="https://grupomax.com.br" class="text-primary underline" target="_blank">GrupoMax</a></h3>
+            <p class="text-sm text-gray-500">ago/2014 – fev/2017</p>
+            <p class="text-gray-700">Desenvolvimento de <strong>ERP próprio</strong> para microempresas e criação de <strong>sites institucionais</strong>. Utilização de <strong>Laravel</strong>, <strong>CodeIgniter</strong>, <strong>Ionic</strong> e banco de dados relacionais em ambiente Linux.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Tecnologias & Stack</h2>
-        <ul class="list-disc list-inside mt-4 text-vapor-blue">
-          <li>PHP (Laravel, Symfony, CodeIgniter), Node.js, Typescript</li>
-          <li>Vue.js, React.js</li>
-          <li>MySQL, PostgreSQL, MongoDB</li>
-          <li>Docker, RabbitMQ, GitLab CI/CD</li>
-          <li>APIs RESTful, Web Crawlers, EMV</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Formação Acadêmica</h2>
-        <p class="mt-4"><strong>UNINOVE</strong> — Tecnólogo em Análise e Desenvolvimento de Sistemas (2019–2023)</p>
-        <p><strong>ETEC Santa Isabel</strong> — Técnico em Informática para Internet (2013–2014)</p>
-      </section>
-
-      <section>
-        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Idiomas</h2>
-        <p class="mt-4">Português — Nativo<br />Inglês — Proficiência Profissional</p>
-      </section>
-    </main>
-
-    <footer class="text-center mt-16 text-pink-300 text-sm">
-      <p>© 2025 Mário Lucas Costa — Desenvolvido com ❤️ estilo e competência. <a href="https://oreduto.com.br" class="underline">oreduto.com.br</a> • <a href="https://mlucascosta.com.br" class="underline">mlucascosta.com.br</a></p>
+    <!-- Footer -->
+    <footer class="text-center py-6 text-gray-400 text-sm">
+      <p>© 2025 Mário Lucas Costa — <a href="https://oreduto.com.br" class="underline hover:text-primary" target="_blank">oreduto.com.br</a> • <a href="https://mlucascosta.com.br" class="underline hover:text-primary" target="_blank">mlucascosta.com.br</a></p>
     </footer>
   </div>
 
-  <!-- Alpine Theme Switcher -->
   <script>
     function themeSwitcher() {
       return {
-        theme: localStorage.getItem('theme') || 'dark',
+        theme: localStorage.getItem('theme') || 'light',
         toggleTheme() {
           this.theme = this.theme === 'dark' ? 'light' : 'dark';
           localStorage.setItem('theme', this.theme);
