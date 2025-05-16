@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" x-data="themeSwitcher()" :class="theme" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -33,11 +33,11 @@
             sans: ['Poppins', 'Inter', 'Segoe UI', 'sans-serif']
           },
           boxShadow: {
-            vapor: '0 4px 20px rgba(255, 110, 199, 0.4)',
-          },
+            vapor: '0 4px 20px rgba(255, 110, 199, 0.4)'
+          }
         }
       }
-    };
+    }
   </script>
 
   <!-- Font Awesome -->
@@ -47,32 +47,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- Alpine.js -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- Estilo personalizado -->
   <style>
     html {
       scroll-behavior: smooth;
     }
+
     body {
       background-image: url('f30d6e97-fa25-43f5-959e-c3e8e766f15d.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
+
     .glass {
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-radius: 1rem;
-      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
   </style>
 </head>
 
-<body class="font-sans text-white min-h-screen">
+<body x-data="themeSwitcher()" x-init="init()" :class="theme" class="font-sans text-white min-h-screen">
   <div class="max-w-5xl mx-auto px-6 py-10 glass animate__animated animate__fadeIn">
+
     <!-- Toggle Theme Button -->
     <div class="flex justify-between items-center mb-6">
       <div>
@@ -153,6 +156,7 @@
     </footer>
   </div>
 
+  <!-- Alpine Theme Switcher -->
   <script>
     function themeSwitcher() {
       return {
