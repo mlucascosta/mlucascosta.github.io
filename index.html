@@ -18,7 +18,7 @@
               pink: '#FF6EC7',
               blue: '#6ECFFF',
               purple: '#A18CD1',
-              dark: '#22223B',
+              dark: '#0f0c29',
               gray: '#9A8C98'
             },
             light: {
@@ -37,7 +37,7 @@
           },
         }
       }
-    }
+    };
   </script>
 
   <!-- Font Awesome -->
@@ -54,26 +54,40 @@
     html {
       scroll-behavior: smooth;
     }
-
     body {
-      background: linear-gradient(135deg, #1e1b4b, #22223b);
+      background-image: url('https://images.unsplash.com/photo-1549921296-3a5325c99c61?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .glass {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
   </style>
 </head>
 
-<body class="font-sans text-white bg-cover min-h-screen">
-  <div class="max-w-5xl mx-auto px-6 py-10">
+<body class="font-sans text-white min-h-screen">
+  <div class="max-w-5xl mx-auto px-6 py-10 glass animate__animated animate__fadeIn">
     <!-- Toggle Theme Button -->
-    <div class="flex justify-end mb-6">
+    <div class="flex justify-between items-center mb-6">
+      <div>
+        <a href="https://oreduto.com.br" class="text-sm text-vapor-blue hover:underline mr-4">🔗 oReduto.com.br</a>
+        <a href="https://mlucascosta.com.br" class="text-sm text-vapor-pink hover:underline">🌐 mlucascosta.com.br</a>
+      </div>
       <button @click="toggleTheme" class="text-2xl text-vapor-pink hover:scale-105 transition">
         <i :class="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
       </button>
     </div>
 
     <!-- Header -->
-    <header class="text-center mb-16 animate__animated animate__fadeIn">
-      <h1 class="text-4xl font-bold text-vapor-pink">Mário Lucas Costa</h1>
-      <p class="text-lg text-vapor-blue mt-2">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
+    <header class="text-center mb-16">
+      <h1 class="text-5xl font-bold text-vapor-pink mb-2 drop-shadow">Mário Lucas Costa</h1>
+      <p class="text-xl text-vapor-blue">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
       <div class="mt-4 space-x-6">
         <a href="mailto:mlucascosta@outlook.com" class="text-vapor-purple hover:underline"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" class="text-vapor-purple hover:underline"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -81,64 +95,61 @@
       </div>
     </header>
 
-    <!-- Sobre -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Resumo Profissional</h2>
-      <p class="mt-4 text-light-muted">
-        Desenvolvedor backend com mais de 8 anos de experiência em PHP (Laravel, Symfony, CodeIgniter) e Node.js. Já atuei em sistemas EMV, crawlers, APIs e arquitetura escalável. Contribuí para empresas como Prodata Mobility, Movvi, Governo de MG e UpLexis.
-      </p>
-    </section>
+    <!-- Conteúdo principal -->
+    <main class="space-y-14">
+      <section>
+        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Resumo Profissional</h2>
+        <p class="mt-4 text-light-muted">
+          Sou um desenvolvedor backend com mais de 8 anos de experiência prática em aplicações escaláveis, APIs, sistemas EMV e automação de dados via crawlers. Atuei em projetos críticos para empresas como Prodata Mobility, Movvi e o Governo de MG.
+        </p>
+      </section>
 
-    <!-- Experiência -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Experiência Profissional</h2>
-      <div class="mt-4 space-y-6">
-        <div>
-          <h3 class="font-semibold text-lg">Catena IT (Prodata Mobility) — Node.js Sênior</h3>
-          <p class="text-sm text-vapor-gray">jun/2024 – atual</p>
-          <p class="text-light-muted">Desenvolvimento de sistemas EMV com Node.js, Docker e APIs REST.</p>
+      <section>
+        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Experiência Profissional</h2>
+        <div class="mt-4 space-y-6">
+          <div>
+            <h3 class="font-semibold text-lg">Catena IT (Prodata Mobility)</h3>
+            <p class="text-sm text-vapor-gray">jun/2024 – atual</p>
+            <p>Node.js | Docker | Sistemas EMV | APIs REST</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Stefanini (Movvi & Governo MG)</h3>
+            <p class="text-sm text-vapor-gray">out/2021 – mai/2024</p>
+            <p>Symfony | Electron.js | Vue.js | Projetos escaláveis e públicos</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">UpLexis Tecnologia</h3>
+            <p class="text-sm text-vapor-gray">ago/2018 – out/2021</p>
+            <p>PHP | Crawlers | APIs externas | Backend escalável</p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">Stefanini (Movvi & Governo MG) — Desenvolvedor Pleno</h3>
-          <p class="text-sm text-vapor-gray">out/2021 – mai/2024</p>
-          <p class="text-light-muted">Projetos com Symfony, Electron.js, Vue.js e Docker.</p>
-        </div>
-        <div>
-          <h3 class="font-semibold text-lg">UpLexis Tecnologia — PHP Jr</h3>
-          <p class="text-sm text-vapor-gray">ago/2018 – out/2021</p>
-          <p class="text-light-muted">Criação de crawlers e integração com APIs em PHP/Node.js.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Stack -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Tecnologias & Stack</h2>
-      <ul class="list-disc list-inside mt-4 text-vapor-blue">
-        <li>PHP (Laravel, Symfony, CodeIgniter), Node.js, Typescript</li>
-        <li>Vue.js, React.js</li>
-        <li>MySQL, PostgreSQL, MongoDB</li>
-        <li>Docker, RabbitMQ, GitLab CI/CD</li>
-        <li>APIs RESTful, Web Crawlers, EMV</li>
-      </ul>
-    </section>
+      <section>
+        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Tecnologias & Stack</h2>
+        <ul class="list-disc list-inside mt-4 text-vapor-blue">
+          <li>PHP (Laravel, Symfony, CodeIgniter), Node.js, Typescript</li>
+          <li>Vue.js, React.js</li>
+          <li>MySQL, PostgreSQL, MongoDB</li>
+          <li>Docker, RabbitMQ, GitLab CI/CD</li>
+          <li>APIs RESTful, Web Crawlers, EMV</li>
+        </ul>
+      </section>
 
-    <!-- Formação -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Formação Acadêmica</h2>
-      <p class="mt-4"><strong>UNINOVE</strong> — Tecnólogo em Análise e Desenvolvimento de Sistemas (2019–2023)</p>
-      <p><strong>ETEC Santa Isabel</strong> — Técnico em Informática para Internet (2013–2014)</p>
-    </section>
+      <section>
+        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Formação Acadêmica</h2>
+        <p class="mt-4"><strong>UNINOVE</strong> — Tecnólogo em Análise e Desenvolvimento de Sistemas (2019–2023)</p>
+        <p><strong>ETEC Santa Isabel</strong> — Técnico em Informática para Internet (2013–2014)</p>
+      </section>
 
-    <!-- Idiomas -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Idiomas</h2>
-      <p class="mt-4">Português — Nativo<br />Inglês — Proficiência Profissional</p>
-    </section>
+      <section>
+        <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Idiomas</h2>
+        <p class="mt-4">Português — Nativo<br />Inglês — Proficiência Profissional</p>
+      </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="text-center mt-16 text-pink-300 text-sm">
-      <p>© 2025 Mário Lucas Costa — Desenvolvido com ❤️ no estilo vaporwave.</p>
+      <p>© 2025 Mário Lucas Costa — Desenvolvido com ❤️ estilo e competência. <a href="https://oreduto.com.br" class="underline">oreduto.com.br</a> • <a href="https://mlucascosta.com.br" class="underline">mlucascosta.com.br</a></p>
     </footer>
   </div>
 
