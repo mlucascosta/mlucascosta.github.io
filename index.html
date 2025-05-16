@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR" x-data="themeSwitcher()" :class="theme" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mário Lucas Costa - Currículo</title>
+  <title>Mário Lucas Costa - Desenvolvedor Backend</title>
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -32,103 +33,112 @@
             sans: ['Poppins', 'Inter', 'Segoe UI', 'sans-serif']
           },
           boxShadow: {
-            vapor: '0 4px 15px rgba(255, 110, 199, 0.4)',
+            vapor: '0 4px 20px rgba(255, 110, 199, 0.4)',
           },
         }
       }
-    };
+    }
   </script>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  
+
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- Alpine.js -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3" defer></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <!-- Estilo personalizado -->
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-image: url('https://i.imgur.com/dAk2wNp.jpeg');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(135deg, #1e1b4b, #22223b);
     }
   </style>
 </head>
-<body x-data="themeSwitcher()" :class="theme" class="font-sans leading-relaxed transition-colors duration-500">
-  <div class="max-w-5xl mx-auto px-6 py-10 bg-black/60 rounded-xl shadow-vapor animate__animated animate__fadeIn">
 
-    <div class="flex justify-end mb-4">
-      <button @click="toggleTheme" class="text-white text-xl">
+<body class="font-sans text-white bg-cover min-h-screen">
+  <div class="max-w-5xl mx-auto px-6 py-10">
+    <!-- Toggle Theme Button -->
+    <div class="flex justify-end mb-6">
+      <button @click="toggleTheme" class="text-2xl text-vapor-pink hover:scale-105 transition">
         <i :class="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
       </button>
     </div>
 
-    <header class="text-center mb-10">
-      <div class="animate__animated animate__pulse">
-        <h1 class="text-4xl font-extrabold text-white mb-2">Mário Lucas Costa</h1>
-        <p class="text-lg text-vapor-pink">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
-        <div class="mt-4 flex justify-center space-x-6 text-vapor-blue">
-          <a href="mailto:mlucascosta@outlook.com"><i class="fas fa-envelope"></i> E-mail</a>
-          <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/mlucascosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        </div>
+    <!-- Header -->
+    <header class="text-center mb-16 animate__animated animate__fadeIn">
+      <h1 class="text-4xl font-bold text-vapor-pink">Mário Lucas Costa</h1>
+      <p class="text-lg text-vapor-blue mt-2">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
+      <div class="mt-4 space-x-6">
+        <a href="mailto:mlucascosta@outlook.com" class="text-vapor-purple hover:underline"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" class="text-vapor-purple hover:underline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/mlucascosta" target="_blank" class="text-vapor-purple hover:underline"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </header>
 
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Resumo Profissional</h2>
-      <p class="text-white/90 mt-2">
-        Desenvolvedor backend com mais de 8 anos de experiência em PHP (Laravel, Symfony, CodeIgniter) e Node.js. Atuou em projetos estratégicos para empresas como Movvi, Prodata Mobility e Governo de MG. Especialista em APIs, crawlers e sistemas EMV, com foco em performance e arquitetura escalável.
+    <!-- Sobre -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Resumo Profissional</h2>
+      <p class="mt-4 text-light-muted">
+        Desenvolvedor backend com mais de 8 anos de experiência em PHP (Laravel, Symfony, CodeIgniter) e Node.js. Já atuei em sistemas EMV, crawlers, APIs e arquitetura escalável. Contribuí para empresas como Prodata Mobility, Movvi, Governo de MG e UpLexis.
       </p>
     </section>
 
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Experiência Profissional</h2>
-      <ul class="space-y-4 text-white/90">
-        <li>
-          <strong>Catena IT (Prodata Mobility)</strong> — Node.js Sênior<br />
-          <span class="text-sm text-vapor-purple">jun/2024 – atual</span><br />
-          Desenvolvimento de sistemas EMV, arquitetura escalável, Docker e APIs REST.
-        </li>
-        <li>
-          <strong>Stefanini (Movvi & Governo MG)</strong> — Desenvolvedor Pleno<br />
-          <span class="text-sm text-vapor-purple">out/2021 – mai/2024</span><br />
-          Symfony, Electron, Vue.js, integração com APIs públicas e projetos Dockerizados.
-        </li>
-        <li>
-          <strong>UpLexis Tecnologia</strong> — PHP Jr<br />
-          <span class="text-sm text-vapor-purple">ago/2018 – out/2021</span><br />
-          Desenvolvimento de crawlers, APIs e sistemas backend com PHP e Node.js.
-        </li>
-      </ul>
+    <!-- Experiência -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Experiência Profissional</h2>
+      <div class="mt-4 space-y-6">
+        <div>
+          <h3 class="font-semibold text-lg">Catena IT (Prodata Mobility) — Node.js Sênior</h3>
+          <p class="text-sm text-vapor-gray">jun/2024 – atual</p>
+          <p class="text-light-muted">Desenvolvimento de sistemas EMV com Node.js, Docker e APIs REST.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Stefanini (Movvi & Governo MG) — Desenvolvedor Pleno</h3>
+          <p class="text-sm text-vapor-gray">out/2021 – mai/2024</p>
+          <p class="text-light-muted">Projetos com Symfony, Electron.js, Vue.js e Docker.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">UpLexis Tecnologia — PHP Jr</h3>
+          <p class="text-sm text-vapor-gray">ago/2018 – out/2021</p>
+          <p class="text-light-muted">Criação de crawlers e integração com APIs em PHP/Node.js.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Tecnologias & Stack</h2>
-      <ul class="list-disc list-inside text-vapor-blue">
+    <!-- Stack -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Tecnologias & Stack</h2>
+      <ul class="list-disc list-inside mt-4 text-vapor-blue">
         <li>PHP (Laravel, Symfony, CodeIgniter), Node.js, Typescript</li>
-        <li>Vue.js, React.js (intermediário)</li>
+        <li>Vue.js, React.js</li>
         <li>MySQL, PostgreSQL, MongoDB</li>
         <li>Docker, RabbitMQ, GitLab CI/CD</li>
-        <li>APIs RESTful, EMV, Web Crawlers</li>
+        <li>APIs RESTful, Web Crawlers, EMV</li>
       </ul>
     </section>
 
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Formação Acadêmica</h2>
-      <p><strong>UNINOVE</strong> — Tecnólogo em Análise e Desenvolvimento de Sistemas (2019–2023)</p>
+    <!-- Formação -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Formação Acadêmica</h2>
+      <p class="mt-4"><strong>UNINOVE</strong> — Tecnólogo em Análise e Desenvolvimento de Sistemas (2019–2023)</p>
       <p><strong>ETEC Santa Isabel</strong> — Técnico em Informática para Internet (2013–2014)</p>
     </section>
 
-    <section>
-      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Idiomas</h2>
-      <p>Português — Nativo<br />Inglês — Proficiência Profissional</p>
+    <!-- Idiomas -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-pink-400 border-b border-pink-400 pb-2">Idiomas</h2>
+      <p class="mt-4">Português — Nativo<br />Inglês — Proficiência Profissional</p>
     </section>
 
-    <footer class="text-center mt-12 text-pink-300 text-sm">
-      <p>© 2025 Mário Lucas Costa — Desenvolvido com ❤️ e Vaporwave</p>
+    <!-- Footer -->
+    <footer class="text-center mt-16 text-pink-300 text-sm">
+      <p>© 2025 Mário Lucas Costa — Desenvolvido com ❤️ no estilo vaporwave.</p>
     </footer>
   </div>
 
@@ -148,4 +158,5 @@
     }
   </script>
 </body>
+
 </html>
