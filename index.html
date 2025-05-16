@@ -1,63 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mário Lucas Costa - Currículo</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            vapor: {
+              pink: '#FF6EC7',
+              blue: '#6ECFFF',
+              purple: '#A18CD1',
+              dark: '#22223B',
+              gray: '#9A8C98'
+            },
+            light: {
+              base: '#FFFFFF',
+              surface: '#F3F4F6',
+              border: '#E5E7EB',
+              muted: '#D1D5DB',
+              accent: '#0078D4'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Inter', 'Segoe UI', 'sans-serif']
+          },
+          boxShadow: {
+            vapor: '0 4px 15px rgba(255, 110, 199, 0.4)',
+          },
+        }
+      }
+    };
+  </script>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <!-- Custom Vaporwave Style -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Alpine.js -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3" defer></script>
+  
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/dAk2wNp.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 </head>
-<body class="bg-vapor bg-cover text-white font-sans leading-relaxed">
-  <div class="max-w-5xl mx-auto px-6 py-10 bg-black bg-opacity-60 rounded-lg shadow-lg">
+<body x-data="themeSwitcher()" :class="theme" class="font-sans leading-relaxed transition-colors duration-500">
+  <div class="max-w-5xl mx-auto px-6 py-10 bg-black/60 rounded-xl shadow-vapor animate__animated animate__fadeIn">
+
+    <div class="flex justify-end mb-4">
+      <button @click="toggleTheme" class="text-white text-xl">
+        <i :class="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
+      </button>
+    </div>
 
     <header class="text-center mb-10">
-      <h1 class="text-4xl font-extrabold neon-text mb-2">Mário Lucas Costa</h1>
-      <p class="text-lg text-pink-300">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
-      <div class="mt-4 flex justify-center space-x-6 text-pink-200">
-        <a href="mailto:mlucascosta@outlook.com"><i class="fas fa-envelope"></i> E-mail</a>
-        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/mlucascosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <div class="animate__animated animate__pulse">
+        <h1 class="text-4xl font-extrabold text-white mb-2">Mário Lucas Costa</h1>
+        <p class="text-lg text-vapor-pink">Desenvolvedor Backend Sênior — PHP | Node.js | Typescript</p>
+        <div class="mt-4 flex justify-center space-x-6 text-vapor-blue">
+          <a href="mailto:mlucascosta@outlook.com"><i class="fas fa-envelope"></i> E-mail</a>
+          <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/mlucascosta" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
       </div>
     </header>
 
     <section class="mb-8">
-      <h2 class="section-title">Resumo Profissional</h2>
-      <p>
+      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Resumo Profissional</h2>
+      <p class="text-white/90 mt-2">
         Desenvolvedor backend com mais de 8 anos de experiência em PHP (Laravel, Symfony, CodeIgniter) e Node.js. Atuou em projetos estratégicos para empresas como Movvi, Prodata Mobility e Governo de MG. Especialista em APIs, crawlers e sistemas EMV, com foco em performance e arquitetura escalável.
       </p>
     </section>
 
     <section class="mb-8">
-      <h2 class="section-title">Experiência Profissional</h2>
-      <ul class="space-y-4">
+      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Experiência Profissional</h2>
+      <ul class="space-y-4 text-white/90">
         <li>
-          <strong>Catena IT (Prodata Mobility)</strong><br />
-          <span class="text-sm text-pink-200">jun/2024 – atual</span><br />
-          Desenvolvimento de sistemas EMV com Node.js, Docker, Git e APIs REST.
+          <strong>Catena IT (Prodata Mobility)</strong> — Node.js Sênior<br />
+          <span class="text-sm text-vapor-purple">jun/2024 – atual</span><br />
+          Desenvolvimento de sistemas EMV, arquitetura escalável, Docker e APIs REST.
         </li>
         <li>
-          <strong>Stefanini (Movvi & Governo MG)</strong><br />
-          <span class="text-sm text-pink-200">out/2021 – mai/2024</span><br />
-          Symfony, Electron, Vue.js, integração com APIs públicas e projetos distribuídos em Docker.
+          <strong>Stefanini (Movvi & Governo MG)</strong> — Desenvolvedor Pleno<br />
+          <span class="text-sm text-vapor-purple">out/2021 – mai/2024</span><br />
+          Symfony, Electron, Vue.js, integração com APIs públicas e projetos Dockerizados.
         </li>
         <li>
-          <strong>UpLexis Tecnologia</strong><br />
-          <span class="text-sm text-pink-200">ago/2018 – out/2021</span><br />
+          <strong>UpLexis Tecnologia</strong> — PHP Jr<br />
+          <span class="text-sm text-vapor-purple">ago/2018 – out/2021</span><br />
           Desenvolvimento de crawlers, APIs e sistemas backend com PHP e Node.js.
         </li>
       </ul>
     </section>
 
     <section class="mb-8">
-      <h2 class="section-title">Tecnologias & Stack</h2>
-      <ul class="list-disc list-inside text-pink-100">
+      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Tecnologias & Stack</h2>
+      <ul class="list-disc list-inside text-vapor-blue">
         <li>PHP (Laravel, Symfony, CodeIgniter), Node.js, Typescript</li>
         <li>Vue.js, React.js (intermediário)</li>
         <li>MySQL, PostgreSQL, MongoDB</li>
@@ -67,20 +117,35 @@
     </section>
 
     <section class="mb-8">
-      <h2 class="section-title">Formação Acadêmica</h2>
+      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Formação Acadêmica</h2>
       <p><strong>UNINOVE</strong> — Tecnólogo em Análise e Desenvolvimento de Sistemas (2019–2023)</p>
       <p><strong>ETEC Santa Isabel</strong> — Técnico em Informática para Internet (2013–2014)</p>
     </section>
 
     <section>
-      <h2 class="section-title">Idiomas</h2>
+      <h2 class="text-2xl font-semibold border-b border-pink-400 pb-1 text-white">Idiomas</h2>
       <p>Português — Nativo<br />Inglês — Proficiência Profissional</p>
     </section>
 
     <footer class="text-center mt-12 text-pink-300 text-sm">
-      <p>© 2025 Mário Lucas Costa — Código disponível no <a href="https://github.com/mlucascosta" class="underline">GitHub</a></p>
+      <p>© 2025 Mário Lucas Costa — Desenvolvido com ❤️ e Vaporwave</p>
     </footer>
   </div>
+
+  <script>
+    function themeSwitcher() {
+      return {
+        theme: localStorage.getItem('theme') || 'dark',
+        toggleTheme() {
+          this.theme = this.theme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', this.theme);
+          document.documentElement.classList.toggle('dark', this.theme === 'dark');
+        },
+        init() {
+          document.documentElement.classList.toggle('dark', this.theme === 'dark');
+        }
+      }
+    }
+  </script>
 </body>
 </html>
-
