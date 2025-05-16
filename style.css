@@ -1,1 +1,24 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-vapor {
+  background-image: url('https://i.imgur.com/dAk2wNp.jpeg'); /* fundo vaporwave */
+  background-size: cover;
+  background-position: center;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 40px #ff00cc;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f472b6;
+  border-bottom: 1px solid #f472b6;
+  padding-bottom: 0.25rem;
+}
 
