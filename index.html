@@ -8,10 +8,6 @@
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Alpine.js para reatividade simples -->
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
   <script>
     tailwind.config = {
       theme: {
@@ -35,42 +31,27 @@
     };
   </script>
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Orbitron:wght@600&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Alpine.js para reatividade -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-  <!-- Boxicons (ícones de marca) -->
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <style>
-    html {
-      scroll-behavior: smooth;
-      background-color: #F5F5F7;
-    }
-    .email-protect::before {
-      content: attr(data-user) "[em]" attr(data-domain);
-    }
+    html { scroll-behavior: smooth; background-color: #F5F5F7; }
+    .email-protect::before { content: attr(data-user) "[em]" attr(data-domain); }
   </style>
 </head>
 
 <body class="font-sans text-contrast" x-data="experience()">
-  <!-- Header com ícones sociais -->
+  <!-- Header -->
   <header class="w-full py-4 bg-base shadow-subtle">
     <div class="max-w-4xl mx-auto flex justify-end space-x-6 text-primary text-xl px-4">
-      <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" class="hover:text-primary/80" aria-label="LinkedIn">
-        <i class='bx bxl-linkedin'></i>
-      </a>
-      <a href="https://github.com/mlucascosta" target="_blank" class="hover:text-primary/80" aria-label="GitHub">
-        <i class='bx bxl-github'></i>
-      </a>
-      <a href="#" class="hover:text-primary/80" aria-label="Discord">
-        <i class='bx bxl-discord-alt'></i>
-      </a>
+      <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/mlucascosta" target="_blank"><i class='bx bxl-github'></i></a>
+      <a href="#" aria-label="Discord"><i class='bx bxl-discord-alt'></i></a>
     </div>
   </header>
 
@@ -81,64 +62,96 @@
       <p class="text-lg text-graylight">Desenvolvedor Backend Sênior</p>
     </section>
 
-    <!-- Sobre -->
-    <section class="max-w-3xl w-full px-6 py-12 text-center">
+    <section id="sobre" class="max-w-3xl w-full px-6 py-12 text-center">
       <h2 class="text-2xl font-semibold mb-4">Sobre mim</h2>
-      <p class="text-gray-700">
-        Desenvolvedor backend com mais de <strong><span x-text="years"></span></strong> anos de experiência. Especialista em
-        <a href="https://laravel.com" target="_blank" class="text-primary underline">Laravel</a>,
-        <a href="https://symfony.com" target="_blank" class="text-primary underline">Symfony</a>,
-        <a href="https://nodejs.org" target="_blank" class="text-primary underline">Node.js</a> e
-        <a href="https://www.docker.com/" target="_blank" class="text-primary underline">Docker</a>. Já atuei em projetos de grande impacto com empresas como
-        <a href="https://www.prodatamobility.com.br/" target="_blank" class="text-primary underline">Prodata Mobility</a>,
-        <a href="https://movvi.com.br/" target="_blank" class="text-primary underline">Movvi</a>,
-        <a href="https://www.uplexis.com.br" target="_blank" class="text-primary underline">UpLexis</a>,
-        <a href="https://www.stefanini.com/pt-br" target="_blank" class="text-primary underline">Stefanini</a> e
-        <a href="https://grupomax.com.br" target="_blank" class="text-primary underline">GrupoMax</a>,
-        além de iniciativas com o Governo do Estado de MG.
-      </p>
+      <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+        <p class="text-gray-700 mt-4">
+          Sou desenvolvedor backend sênior com mais de <strong><span x-text="years"></span></strong> anos de experiência.<br>
+    Já atuei em projetos de alto impacto em empresas como
+    <span class="text-red-600 font-semibold">Prodata Mobility</span>,
+    <span class="text-red-600 font-semibold">Movvi</span>,
+    <span class="text-red-600 font-semibold">UpLexis</span> e
+    <span class="text-red-600 font-semibold">GrupoMax</span>.<br>
+    Construo
+    <span class="text-green-600 font-semibold">APIs escaláveis</span>
+    em
+    <span class="text-blue-600 font-semibold">PHP</span> (<span class="text-blue-600">Laravel</span>,
+    <span class="text-blue-600">Symfony</span>),
+    <span class="text-blue-600">Node.js</span>,
+    <span class="text-blue-600">Go</span> e
+    <span class="text-blue-600">Python</span>, orquestradas com
+    <span class="text-green-600">Docker</span> e
+    <span class="text-green-600">Kubernetes</span>,
+    mensageria com
+    <span class="text-green-600">RabbitMQ</span> e cache em
+    <span class="text-green-600">Redis</span>.<br>
+    Apaixonado por <span class="text-indigo-600 font-semibold">DDD</span>,
+    <span class="text-indigo-600 font-semibold">TDD</span> e
+    <span class="text-indigo-600 font-semibold">Clean Code</span>,
+    entrego soluções robustas, seguras e de alta performance.
+        </p>
+      </div>
+  
+</section>
+
+
+    
+      <!-- Idiomas -->
+    <section class="w-full py-8 bg-base">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-semibold mb-4">Idiomas</h2>
+        <div class="flex justify-center space-x-8">
+          <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='text-primary text-2xl'></i><span><span class="font-medium">Português</span> — Nativo</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='text-primary text-2xl'></i><span><span class="font-medium">Inglês</span> — Fluente</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Tecnologias & Ferramentas -->
-    <section id="stack" class="w-full py-12 bg-base">
+    <!-- Stack -->
+    <section id="stack" class="w-full py-12">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-2xl font-semibold mb-8 text-center">Stack</h2>
 
         <!-- Linguagens & Bancos de Dados -->
         <div class="mb-10">
           <h3 class="text-xl font-medium mb-4">Linguagens & Bancos de Dados</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-php text-primary text-2xl'></i>
-              <span class="text-gray-700">PHP</span>
+              <i class='bx bxl-php text-primary text-2xl'></i><span>PHP</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-nodejs text-primary text-2xl'></i>
-              <span class="text-gray-700">JavaScript</span>
+              <i class='bx bxl-nodejs text-primary text-2xl'></i><span>JavaScript</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-typescript text-primary text-2xl'></i>
-              <span class="text-gray-700">TypeScript</span>
+              <i class='bx bxl-typescript text-primary text-2xl'></i><span>TypeScript</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-mysql text-primary text-2xl'></i>
-              <span class="text-gray-700">MySQL</span>
+              <i class='bx bxl-python text-primary text-2xl'></i><span>Python</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-postgresql text-primary text-2xl'></i>
-              <span class="text-gray-700">PostgreSQL</span>
+              <i class='bx bxl-java text-primary text-2xl'></i><span>Java</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxs-server text-primary text-2xl'></i>
-              <span class="text-gray-700">Oracle</span>
+              <i class='bx bxl-go text-primary text-2xl'></i><span>Go</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxs-server text-primary text-2xl'></i>
-              <span class="text-gray-700">MariaDB</span>
+              <i class='bx bxl-mysql text-primary text-2xl'></i><span>MySQL</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-redis text-primary text-2xl'></i>
-              <span class="text-gray-700">Redis</span>
+              <i class='bx bxl-postgresql text-primary text-2xl'></i><span>PostgreSQL</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxs-server text-primary text-2xl'></i><span>Oracle</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxs-server text-primary text-2xl'></i><span>MariaDB</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-redis text-primary text-2xl'></i><span>Redis</span>
             </div>
           </div>
         </div>
@@ -146,22 +159,21 @@
         <!-- Frameworks & Bibliotecas -->
         <div class="mb-10">
           <h3 class="text-xl font-medium mb-4">Frameworks & Bibliotecas</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-laravel text-primary text-2xl'></i>
-              <span class="text-gray-700">Laravel</span>
+              <i class='bx bxl-laravel text-primary text-2xl'></i><span>Laravel</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-symfony text-primary text-2xl'></i>
-              <span class="text-gray-700">Symfony</span>
+              <i class='bx bxl-symfony text-primary text-2xl'></i><span>Symfony</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-vuejs text-primary text-2xl'></i>
-              <span class="text-gray-700">Vue.js</span>
+              <i class='bx bxl-vuejs text-primary text-2xl'></i><span>Vue.js</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-react text-primary text-2xl'></i>
-              <span class="text-gray-700">React.js</span>
+              <i class='bx bxl-react text-primary text-2xl'></i><span>React.js</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
+              <i class='bx bxl-react text-primary text-2xl'></i><span>React Native</span>
             </div>
           </div>
         </div>
@@ -169,32 +181,25 @@
         <!-- Ferramentas & Infraestrutura -->
         <div>
           <h3 class="text-xl font-medium mb-4">Ferramentas & Infraestrutura</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-docker text-primary text-2xl'></i>
-              <span class="text-gray-700">Docker</span>
+              <i class='bx bxl-docker text-primary text-2xl'></i><span>Docker</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-npm text-primary text-2xl'></i>
-              <span class="text-gray-700">npm</span>
+              <i class='bx bxl-kubernetes text-primary text-2xl'></i><span>Kubernetes</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-kubernetes text-primary text-2xl'></i>
-              <span class="text-gray-700">Kubernetes</span>
+              <i class='bx bxl-traefik text-primary text-2xl'></i><span>Traefik</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxs-plug text-primary text-2xl'></i>
-              <span class="text-gray-700">Sockets</span>
+              <i class='bx bxl-nginx text-primary text-2xl'></i><span>Nginx</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxs-plug text-primary text-2xl'></i>
-              <span class="text-gray-700">WebSockets</span>
+              <i class='bx bxl-caddy text-primary text-2xl'></i><span>Caddy</span>
             </div>
             <div class="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-              <i class='bx bxl-rabbitmq text-primary text-2xl'></i>
-              <span class="text-gray-700">RabbitMQ</span>
+              <i class='bx bxl-linux text-primary text-2xl'></i><span>Linux</span>
             </div>
-            
           </div>
         </div>
       </div>
@@ -206,27 +211,24 @@
         <h2 class="text-2xl font-semibold mb-6">Arquitetura & Boas Práticas</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-            <i class='bx bx-cog text-primary text-2xl mb-2'></i>
-            <span class="block text-gray-700 font-medium">DDD</span>
+            <i class='bx bx-cog text-primary text-2xl mb-2'></i><span class="block text-gray-700 font-medium">DDD</span>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-            <i class='bx bx-test-tube text-primary text-2xl mb-2'></i>
-            <span class="block text-gray-700 font-medium">TDD</span>
+            <i class='bx bx-test-tube text-primary text-2xl mb-2'></i><span class="block text-gray-700 font-medium">TDD</span>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-subtle hover:shadow-md transition">
-            <i class='bx bx-code-alt text-primary text-2xl mb-2'></i>
-            <span class="block text-gray-700 font-medium">Clean Code</span>
+            <i class='bx bx-code-alt text-primary text-2xl mb-2'></i><span class="block text-gray-700 font-medium">Clean Code</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experiência Profissional (timeline refinado) -->
-    <section id="experiencia" class="w-full bg-base py-12">
+    <!-- Experiência Profissional -->
+    <section id="experiencia" class="w-full py-12">
       <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-2xl font-semibold text-center mb-10">Experiência Profissional</h2>
         <div class="relative">
-          <div class="absolute top-0 left-10 w-px h-full bg-soft"></div>
+          <div class="absolute top-0 left-10 w-px h-full bg-primary"></div>
           <div class="space-y-12">
             <!-- Prodata Mobility -->
             <div class="relative">
@@ -239,12 +241,10 @@
                   </h3>
                 </div>
                 <time class="block text-sm text-gray-500 mt-2">jun/2024 – atual</time>
-                <p class="text-gray-700 mt-4">
-                  Desenvolvimento de sistemas backend em <strong>Node.js</strong>, integrando padrões EMV, trabalhando com <strong>Docker</strong>, <strong>RabbitMQ</strong> e integrações financeiras.
-                </p>
+                <p class="text-gray-700 mt-4">Desenvolvimento de sistemas backend em <strong>Node.js</strong>, integrando padrões EMV, com <strong>Docker</strong>, <strong>RabbitMQ</strong> e APIs financeiras.</p>
               </div>
             </div>
-            <!-- Stefanini / Movvi & Governo de MG -->
+            <!-- Stefanini / Movvi & Governo -->
             <div class="relative">
               <div class="absolute -left-12 top-1 w-4 h-4 bg-primary rounded-full ring-2 ring-base"></div>
               <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
@@ -255,12 +255,10 @@
                   </h3>
                 </div>
                 <time class="block text-sm text-gray-500 mt-2">out/2021 – mai/2024</time>
-                <p class="text-gray-700 mt-4">
-                  Projetos de sistemas logísticos e serviços públicos com <strong>Symfony</strong>, <strong>RabbitMQ</strong>, <strong>Electron</strong> e <strong>Vue.js</strong>, além de integrações com APIs públicas e legados.
-                </p>
+                <p class="text-gray-700 mt-4">Projetos de logística e serviços públicos com <strong>Symfony</strong>, <strong>RabbitMQ</strong>, <strong>Electron</strong> e <strong>Vue.js</strong>.</p>
               </div>
             </div>
-            <!-- UpLexis Tecnologia -->
+            <!-- UpLexis -->
             <div class="relative">
               <div class="absolute -left-12 top-1 w-4 h-4 bg-primary rounded-full ring-2 ring-base"></div>
               <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
@@ -271,9 +269,7 @@
                   </h3>
                 </div>
                 <time class="block text-sm text-gray-500 mt-2">ago/2018 – out/2021</time>
-                <p class="text-gray-700 mt-4">
-                  Desenvolvimento de <strong>web crawlers</strong> e <strong>scraping</strong>, manutenção de APIs e arquiteturas distribuídas em <strong>PHP</strong> e <strong>Node.js</strong>.
-                </p>
+                <p class="text-gray-700 mt-4">Desenvolvimento de <strong>web crawlers</strong> e <strong>scraping</strong> em <strong>PHP</strong> e <strong>Node.js</strong>.</p>
               </div>
             </div>
             <!-- GrupoMax -->
@@ -287,28 +283,46 @@
                   </h3>
                 </div>
                 <time class="block text-sm text-gray-500 mt-2">ago/2014 – fev/2017</time>
-                <p class="text-gray-700 mt-4">
-                  Criação de <strong>ERP</strong> e sites institucionais com <strong>Laravel</strong>, <strong>CodeIgniter</strong> e <strong>Ionic</strong> em ambiente Linux.
-                </p>
+                <p class="text-gray-700 mt-4">Criação de <strong>ERP</strong> e sites institucionais com <strong>Laravel</strong>, <strong>CodeIgniter</strong> e <strong>Ionic</strong>.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
+    <!-- Educação & Cursos -->
+    <section class="max-w-4xl w-full px-6 py-12 bg-base">
+      <h2 class="text-2xl font-semibold text-center mb-8">Educação & Cursos</h2>
+      <div class="grid gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+          <h3 class="text-lg font-bold">Curso Técnico em Informática</h3>
+          <time class="block text-sm text-gray-500 mb-2">2012 – 2014</time>
+          <p class="text-gray-700">Formação técnica em desenvolvimento de software, redes e admin. de sistemas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+          <h3 class="text-lg font-bold">Bacharel em Ciência da Computação</h3>
+          <time class="block text-sm text-gray-500 mb-2">2015 – 2018</time>
+          <p class="text-gray-700">Graduação com ênfase em algoritmos, estruturas de dados e engenharia de software.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-subtle hover:shadow-md transition">
+          <h3 class="text-lg font-bold">Cursos Online</h3>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Docker, Kubernetes, Traefik, Nginx, Caddy</li>
+            <li>Laravel, Go, Python, Java, Android</li>
+            <li>Vue.js, React.js, React Native</li>
+            <li>SEO, Linux</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer personalizado -->
+    <!-- Footer -->
     <footer class="w-full bg-base shadow-subtle py-8 mt-12">
       <div class="flex justify-center space-x-6 text-primary text-2xl">
-        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank" aria-label="LinkedIn" class="hover:text-primary/80">
-          <i class='bx bxl-linkedin'></i>
-        </a>
-        <a href="https://github.com/mlucascosta" target="_blank" aria-label="GitHub" class="hover:text-primary/80">
-          <i class='bx bxl-github'></i>
-        </a>
-        <a href="#" target="_blank" aria-label="Discord" class="hover:text-primary/80">
-          <i class='bx bxl-discord-alt'></i>
-        </a>
+        <a href="https://www.linkedin.com/in/mlucascosta/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/mlucascosta" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="#"><i class='bx bxl-discord-alt'></i></a>
       </div>
       <div class="mt-4 text-center text-gray-400 text-sm">
         © <span x-text="currentYear"></span> Mário Lucas Costa — 
@@ -318,7 +332,7 @@
     </footer>
   </div>
 
-  <!-- Script Alpine.js para dados reativos -->
+  <!-- Alpine.js Script -->
   <script>
     document.addEventListener('alpine:init', () => {
       Alpine.data('experience', () => ({
